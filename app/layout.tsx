@@ -1,46 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
-import localFont from "next/font/local"
+import { Hedvig_Letters_Serif, Stack_Sans_Text} from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
-const stackSans = localFont({
-  src: [
-    {
-      path: "./fonts/StackSans-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "./fonts/StackSans-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "./fonts/StackSans-SemiBold.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "./fonts/StackSans-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
+const stackSans = Stack_Sans_Text({
   variable: "--font-stack-sans",
   display: "swap",
   fallback: ["system-ui", "sans-serif"],
 })
 
-const hedvigLettersSerif = localFont({
-  src: [
-    {
-      path: "./fonts/HedvigLettersSerif-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-  ],
+const hedvigLettersSerif = Hedvig_Letters_Serif({
   variable: "--font-hedvig",
   display: "swap",
   fallback: ["Georgia", "serif"],
